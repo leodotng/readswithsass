@@ -10,4 +10,7 @@ router.get("/", function(request, response, next) {
     });
 });
 
+router.get("/new", function(request, response, next)  {
+    response.render("add_book");
+});
 module.exports = router;
