@@ -13,4 +13,15 @@ router.get("/", function(request, response, next) {
 router.get("/new", function(request, response, next)  {
     response.render("add_book");
 });
+
+router.post("/", function(request, response, next) {
+    databaseConnection("book").insert({
+        title: request.body.title,
+        genre: request.body.genre,
+        description: request.body.description,
+        cover_url: request.body.cover_url
+    }).then(function(){
+        response.redirect("/books");
+    });
+});
 module.exports = router;

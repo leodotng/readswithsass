@@ -110,6 +110,37 @@ body > header {
     .books .book .details {
       max-width: 400px;
       margin-left: 1rem; }
+      .books .book .details h3 {
+        font-family: Lora, serif;
+        font-weight: 700;
+        font-color: #333;
+        font-size: 1rem; }
+      .books .book .details .genre {
+        font-family: Lora, serif;
+        font-weight: 400;
+        font-color: #333;
+        font-size: 1rem;
+        font-style: italic; }
+      .books .book .details p {
+        margin-top: 1rem;
+        font-family: Lora, serif;
+        font-weight: 400;
+        font-color: #333;
+        font-size: 1rem; }
+  .books .add {
+    display: inline-block;
+    padding: 2rem 3rem;
+    background: #236467;
+    font-family: Lora, serif;
+    font-weight: 700;
+    font-color: #333;
+    font-size: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s; }
+    .books .add:hover {
+      background-color: #30898d; }
 
 form {
   font-family: Lora, serif;

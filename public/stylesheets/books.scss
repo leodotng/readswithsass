@@ -21,6 +21,30 @@
         .details {
             max-width: 400px;
             margin-left: 1rem;
+            h3 {
+                @include subheader-text;
+            }
+            .genre {
+                @include body-text;
+                font-style: italic;
+            }
+            p {
+                margin-top: 1rem;
+                @include body-text;
+            }
+        }
+    }
+    .add {
+        display: inline-block;
+        padding: 2rem 3rem;
+        background: $create-color;
+        @include subheader-text;
+        font-size: 2rem;
+        text-decoration: none;
+        color: $white;
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: lighten($create-color, 10%);
         }
     }
 }
