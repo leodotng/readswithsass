@@ -15,6 +15,15 @@ router.get("/new", function(request, response, next)  {
 });
 
 router.post("/", function(request, response, next) {
+    request.checkBody("title", "Title is empty or too long").notEmpty().isLength({max:255});
+    request.checkBody("genre", "Genre is empty or too long").notEmpty().isLength({max: 255});
+    request.checkBody("description", "Description is missing or too long").notEmpty().isLength({max: 2000});
+    request.checkBody("cover_image_url", "Not a URL").isUrl(request.body.cover_url);
+
+    var errors = request.validationErorrs();
+    if (errors){
+        response.render("error", {errors: errors});
+    } else {
     databaseConnection("book").insert({
         title: request.body.title,
         genre: request.body.genre,
@@ -23,5 +32,6 @@ router.post("/", function(request, response, next) {
     }).then(function(){
         response.redirect("/books");
     });
+}
 });
 module.exports = router;
