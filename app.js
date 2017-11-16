@@ -6,10 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
 var expressValidator = require('express-validator');
+var methodOverride = require('method-override');
 
 var index = require('./routes/index');
-var users = require('./routes/books');
-
 var app = express();
 
 var routes = require("./routes/index");
