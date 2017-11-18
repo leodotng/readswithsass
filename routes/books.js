@@ -14,6 +14,12 @@ router.get("/new", function(request, response, next)  {
     response.render("add_book");
 });
 
+router.get("/delete/:id", function(request, response, next) {
+    databaseConnection("book").select().where("id", request.params.id).then(function(books){
+        response.render("delete_book", {book: books[0]});
+    });
+});
+
 router.post("/", function(request, response, next) {
     request.checkBody("title", "Title is empty or too long").notEmpty().isLength({max:255});
     request.checkBody("genre", "Genre is empty or too long").notEmpty().isLength({max: 255});
